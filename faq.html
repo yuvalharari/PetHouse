@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>PetHouse - שאלות ותשובות</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            direction: rtl;
+            background-color: #fffaf2;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding: 0;
+            margin: 0;
+            text-align: right;
+        }
+
+        li {
+            margin: 25px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            color: #333;
+        }
+
+        li:hover {
+            color: #e67e00;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 12px;
+            background-color: #f7f2e9;
+            border-right: 4px solid #ff9933;
+            border-radius: 5px;
+            font-size: 1em;
+            line-height: 1.6;
+            font-weight: normal;
+            color: #444;
+        }
+
+        @media (max-width: 768px) {
+            li {
+                font-size: 1em;
+            }
+
+            .answer {
+                font-size: 0.95em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            li {
+                font-size: 0.95em;
+            }
+
+            .answer {
+                font-size: 0.9em;
+            }
+
+            .faq-container {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>PetHouse</h1>
+    <p>אמצו את החבר הכי טוב שלכם</p>
+</header>
+
+<nav>
+    <a href="index.html">דף הבית</a>
+    <a href="dogs.php">כלבים לאימוץ</a>
+    <a href="cats.php">חתולים לאימוץ</a>
+    <a href="faq.html">שאלות ותשובות</a>
+    <a href="contact.html">צור קשר</a>
+    <a href="about.html">אודות</a>
+    <a href="donate.php">תרומות</a>
+    <a href="#" onclick="openAdmin()">הנהלה</a>
+</nav>
+
+<main class="faq-container">
+    <ul>
+        <li onclick="toggleAnswer(0)">איך מתבצע תהליך האימוץ?
+            <div class="answer">ממלאים טופס, צוות העמותה בודק התאמה, ואז מתאם ביקור ובדיקת התאמה הדדית.</div>
+        </li>
+        <li onclick="toggleAnswer(1)">האם ניתן לאמץ גם אם יש ילדים בבית?
+            <div class="answer">כן! אנו דואגים להתאמה מושלמת בין חיה למשפחה, כולל סביבת ילדים.</div>
+        </li>
+        <li onclick="toggleAnswer(2)">מה כולל תהליך האימוץ מבחינת עלויות?
+            <div class="answer">האימוץ כרוך בתרומה מינימלית שמשמשת לחיסונים, עיקור/סירוס וטיפול ראשוני.</div>
+        </li>
+        <li onclick="toggleAnswer(3)">האם החיות מחוסנות ובריאות?
+            <div class="answer">כן. כל בעל חיים עובר בדיקה רפואית, חיסון ועיקור/סירוס לפני אימוץ.</div>
+        </li>
+        <li onclick="toggleAnswer(4)">מה קורה אם האימוץ לא מצליח?
+            <div class="answer">ניתן להחזיר את החיה לעמותה ואנו נמצא לה בית מתאים אחר באהבה.</div>
+        </li>
+        <li onclick="toggleAnswer(5)">האם ניתן לאמץ יותר מחיה אחת?
+            <div class="answer">בהחלט, במיוחד אם הן הסתגלו זו לזו. אנו תומכים באימוץ זוגי!</div>
+        </li>
+        <li onclick="toggleAnswer(6)">איך יודעים איזו חיה מתאימה לי?
+            <div class="answer">הצוות שלנו מייעץ בהתאמה אישית לפי סגנון חיים, גיל, בית עם ילדים ועוד.</div>
+        </li>
+    </ul>
+</main>
+
+<footer>
+    <img src="logo.png" alt="לוגו PetHouse" class="footer-logo"><br>
+    <p>צור קשר: info@pethouse.com | 050-1234567</p>
+</footer>
+
+<script>
+function toggleAnswer(index) {
+    const answers = document.querySelectorAll(".answer");
+    if (answers[index].style.display === "block") {
+        answers[index].style.display = "none";
+    } else {
+        answers.forEach(a => a.style.display = "none");
+        answers[index].style.display = "block";
+    }
+}
+
+function openAdmin() {
+    window.open('admin.php', '_blank', 'width=800,height=600');
+}
+</script>
+
+</body>
+</html>
+

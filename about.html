@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>PetHouse - אודות</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            direction: rtl;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fffaf2;
+            color: #333;
+        }
+
+        header {
+            background-color: #ffcc70;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #f2a365;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            position: relative;
+            background-image: url('images/backgroundpets.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: calc(100vh - 170px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(255, 153, 51, 0.4);
+            z-index: 1;
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            width: 100%;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: right;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        .info-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .info-buttons button {
+            flex: 1 1 auto;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff9933;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            min-width: 120px;
+        }
+
+        .info-buttons button:hover {
+            background-color: #e67e00;
+        }
+
+        #teamInfo {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #e67e00;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .footer-logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+		main {
+        min-height: auto;
+        padding: 20px 10px;
+    }
+            .about-content {
+                padding: 20px;
+                font-size: 1em;
+            }
+
+            .info-buttons button {
+                font-size: 14px;
+                padding: 8px;
+            }
+			
+        }
+
+        @media (max-width: 480px) {
+		
+		 main {
+        min-height: auto;
+        padding: 15px 10px;
+    }
+            .info-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+			
+
+            .info-buttons button {
+                width: 100%;
+            }
+
+            .about-content {
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>PetHouse</h1>
+    <p>אמצו את החבר הכי טוב שלכם</p>
+</header>
+
+<nav>
+    <a href="index.html">דף הבית</a>
+    <a href="dogs.php">כלבים לאימוץ</a>
+    <a href="cats.php">חתולים לאימוץ</a>
+    <a href="faq.html">שאלות ותשובות</a>
+    <a href="contact.html">צור קשר</a>
+    <a href="about.html">אודות</a>
+    <a href="donate.php">תרומות</a>
+    <a href="#" onclick="openAdmin()">הנהלה</a>
+</nav>
+
+<main>
+    <div class="overlay"></div>
+    <div class="about-content">
+        <h2>עלינו</h2>
+        <p>
+    עמותת PetHouse נוסדה בשנת 2017 מתוך אהבה אמיתית לבעלי חיים ורצון לדאוג לכל אחד מהם לבית חם ואוהב.
+    אנו מקדישים את זמננו להצלת חיות, טיפולים רפואיים, עיקורים וחיסונים, וכמובן התאמה למשפחות חדשות.
+    כל אימוץ אצלנו הוא לא רק התחלה חדשה לבעל החיים – אלא גם תוספת של אהבה לבית שמאמץ.
+    מאחורי כל כלב וחתול יש סיפור, ואנחנו כאן כדי לוודא שהוא יסתיים בחיבוק.
+    ואנחנו מבטיחים – הם אולי משאירים שיער על הספה, אבל ממלאים את הלב.
+</p>
+
+
+
+        <p>לחץ על השמות כדי ללמוד על אנשי הצוות שלנו:</p>
+        <div class="info-buttons">
+            <button onclick="showInfo('yael')">יעל כהן</button>
+            <button onclick="showInfo('lior')">ליאור רז</button>
+            <button onclick="showInfo('roni')">רוני גולן</button>
+            <button onclick="showInfo('uri')">אורי דוידוביץ</button>
+        </div>
+        <p id="teamInfo"></p>
+    </div>
+</main>
+
+<footer>
+    <img src="logo.png" alt="לוגו PetHouse" class="footer-logo"><br>
+    <p>צור קשר: info@pethouse.com | 050-1234567</p>
+</footer>
+
+<script>
+    function openAdmin() {
+        window.open('admin.php', '_blank', 'width=800,height=600');
+    }
+
+    function showInfo(name) {
+        let msg = "";
+        if (name === "yael") msg = "יעל כהן – מנכ\"לית העמותה ומנהלת תוכניות האימוץ";
+        else if (name === "lior") msg = "ליאור רז – הווטרינר הראשי";
+        else if (name === "roni") msg = "רוני גולן – אחראית מתנדבים ואירועים";
+        else msg = "אורי דוידוביץ – יועץ התנהגותי לכלבים וחתולים";
+        document.getElementById("teamInfo").innerHTML = msg;
+    }
+</script>
+
+</body>
+</html>

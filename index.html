@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>PetHouse - דף הבית</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body dir="rtl">
+  <div class="page-wrapper">
+
+    <header>
+        <h1>PetHouse</h1>
+        <p>אמצו את החבר הכי טוב שלכם</p>
+    </header>
+
+    <nav>
+        <a href="index.html">דף הבית</a>
+        <a href="dogs.php">כלבים לאימוץ</a>
+        <a href="cats.php">חתולים לאימוץ</a>
+        <a href="faq.html">שאלות ותשובות</a>
+        <a href="contact.html">צור קשר</a>
+        <a href="about.html">אודות</a>
+        <a href="donate.php">תרומות</a>
+        <a href="#" onclick="openAdmin()">הנהלה</a>
+    </nav>
+
+    <main>
+    <video class="main-banner" autoplay muted loop playsinline>
+        <source src="petsintro.mp4" type="video/mp4">
+        הדפדפן שלך אינו תומך בצפייה בווידאו.
+    </video>
+        <p class="about-text">
+            PetHouse היא עמותה ללא מטרות רווח המחברת בין משפחות אוהבות לבין בעלי חיים שזקוקים לבית חם.
+            אנחנו מאמינים שלכל כלב וחתול מגיעה הזדמנות שנייה, ומתחייבים להפוך את האימוץ לחוויה פשוטה, בטוחה ומשמחת.
+        </p>
+
+        <div class="external-links">
+            <h3>מאמרים מומלצים בנושא אימוץ בעלי חיים:</h3>
+            <ul>
+                <li><a href="https://pets-camp.co.il/%D7%90%D7%99%D7%9A-%D7%9C%D7%90%D7%9E%D7%A5-%D7%97%D7%AA%D7%95%D7%9C-%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%9E%D7%9C%D7%90/" target="_blank">📘 איך לאמץ חתול? המדריך המלא - Pets Camp</a></li>
+                <li><a href="https://chayuta.com/knowledge/how-to-adopt-dog/" target="_blank">📗 המדריך המלא לאימוץ כלב - חיותא</a></li>
+                <li><a href="https://www.letlive.org.il/?article=%D7%9C%D7%9E%D7%94-%D7%9C%D7%90%D7%9E%D7%A5-%D7%95%D7%9C%D7%90-%D7%9C%D7%A7%D7%A0%D7%95%D7%AA-%D7%9B%D7%9C%D7%91-%D7%9B%D7%9C-%D7%94%D7%A1%D7%99%D7%91%D7%95%D7%AA-%D7%9C%D7%94%D7%99%D7%9E%D7%A0" target="_blank">📙 למה לאמץ ולא לקנות כלב – תנו לחיות לחיות</a></li>
+            </ul>
+        </div>
+
+        <div class="generate-section">
+            <h2>הגרל חיה לאימוץ!</h2>
+            <button onclick="showRandomPet()">לחץ להגרלה</button>
+            <p id="petResult"></p>
+        </div>
+    </main>
+
+    <footer>
+        <img src="logo.png" alt="לוגו PetHouse" class="footer-logo"><br>
+        <p>צור קשר: info@pethouse.com | 050-1234567</p>
+    </footer>
+  </div>
+    <script>
+        function showRandomPet() {
+    const pets = [
+        "בובי (כלב)", "בלה (כלבה)", "נילי (כלב)", "לונה (כלבה)",
+        "מוקי (כלב)", "מיילו (כלב)", "ניקה (כלבה)", "רוקי (כלב)", "שוקי (כלבה)",
+        "רינה (חתולה)", "ליצי (חתולה)", "מוקה (חתול)", "תותי (חתולה)",
+        "אלפונסו (חתול)", "לוני (חתולה)"
+    ];
+    const random = Math.floor(Math.random() * pets.length);
+    document.getElementById("petResult").textContent = "החיה שנבחרה: " + pets[random];
+}
+
+        function openAdmin() {
+            window.open('admin.php', '_blank', 'width=800,height=600');
+        }
+    </script>
+
+</body>
+</html>

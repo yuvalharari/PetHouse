@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>PetHouse - צור קשר</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            direction: rtl;
+            background-color: #fffaf2;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        #contactHeader {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            #contactHeader {
+                font-size: 20px;
+            }
+
+            .form-container {
+                padding: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #contactHeader {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body onload="welcomeAlert()">
+
+<header>
+    <h1>PetHouse</h1>
+    <p>אמצו את החבר הכי טוב שלכם</p>
+</header>
+
+<nav>
+    <a href="index.html">דף הבית</a>
+    <a href="dogs.php">כלבים לאימוץ</a>
+    <a href="cats.php">חתולים לאימוץ</a>
+    <a href="faq.html">שאלות ותשובות</a>
+    <a href="contact.html">צור קשר</a>
+    <a href="about.html">אודות</a>
+    <a href="donate.php">תרומות</a>
+    <a href="#" onclick="openAdmin()">הנהלה</a>
+</nav>
+
+<main>
+    <div id="contactHeader">טופס יצירת קשר</div>
+    <div class="form-container">
+<iframe src="https://form.jotform.com/251472675855064" width="500px" height="1800px" frameborder="0" style="border:none;" scrolling="no"></iframe>
+
+    </div>
+</main>
+
+<footer>
+    <img src="logo.png" alt="לוגו PetHouse" class="footer-logo"><br>
+    <p>צור קשר: info@pethouse.com | 050-1234567</p>
+</footer>
+
+<script>
+    function openAdmin() {
+        window.open('admin.php', '_blank', 'width=800,height=600');
+    }
+
+    function welcomeAlert() {
+        alert("👋 שלום! כאן תוכלו לשלוח לנו פנייה אישית ונחזור אליכם בהקדם!");
+    }
+</script>
+
+</body>
+</html>
